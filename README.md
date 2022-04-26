@@ -9,10 +9,12 @@ Here is the link for the front end app ...
 
 All the task api will follow the following format `{rootUrl}/api/v1/task`
 
-| #   | Method | Path | Description    |
-| --- | ------ | ---- | -------------- |
-| 1   | `GET`  | `/`  | Get all tasks  |
-| 2   | `POST` | `/`  | Post the tasks |
+| #   | Method   | Path        | Description                              |
+| --- | -------- | ----------- | ---------------------------------------- |
+| 1   | `GET`    | `/`         | Get all tasks                            |
+| 2   | `POST`   | `/`         | send a task obj to store in the database |
+| 3   | `DELETE` | `/{taskId}` | Delete the specific task                 |
+| 4   | `PATCH`  | `/`         | Update the Task Name                     |
 
 ### User API
 
