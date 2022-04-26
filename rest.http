@@ -1,2 +1,17 @@
 ### get request
 GET http://localhost:8000/
+
+### get task from server
+GET  http://localhost:8000/api/v1/task
+
+### post task from server
+POST  http://localhost:8000/api/v1/task
+Content-Type: application/json
+
+{
+    "task" : "Coding",
+    "hr" : 10
+}
+
+### delete task from server
+DELETE  http://localhost:8000/api/v1/task
