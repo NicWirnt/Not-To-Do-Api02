@@ -10,7 +10,7 @@ Content-Type: application/json
 
 {
     "task" : "dance",
-    "hr" : 3,
+    "hr" : 150,
     "userID" : "6278879a251f319ac59757e1"
 }
 
