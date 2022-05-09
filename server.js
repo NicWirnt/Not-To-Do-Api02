@@ -1,9 +1,11 @@
 import express from "express";
 
 const app = express();
+import cors from "cors";
 
 const PORT = 8000;
 
+app.use(cors());
 app.use(express.json());
 
 // mongo connection
@@ -13,7 +15,7 @@ mongoClient();
 // load routers
 
 import taskRouter from "./src/routers/taskRouter.js";
-
+import userRouter from "./src/routers/userRouter.js";
 // Task API
 // const taskFunc = (req, res) => {
 //   //added task in the database
@@ -23,6 +25,7 @@ import taskRouter from "./src/routers/taskRouter.js";
 // };
 
 app.use("/api/v1/task", taskRouter);
+app.use("/api/v1/user", userRouter);
 
 app.listen(PORT, (error) => {
   if (error) {
