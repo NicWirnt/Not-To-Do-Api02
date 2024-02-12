@@ -4,9 +4,11 @@ import swaggerUi from "swagger-ui-express";
 import cors from "cors";
 
 const app = express();
+import cors from "cors";
 
 const PORT = 8000;
 
+<<<<<<< HEAD
 const options = {
   definition: {
     openapi: "3.0.0",
@@ -29,6 +31,10 @@ const options = {
   },
   apis: ["./src/routers/taskRouter.js"],
 };
+=======
+app.use(cors());
+app.use(express.json());
+>>>>>>> 620495299d7a494a9ad7deb5ab31ffe2030ca9a0
 
 const swaggerSpec = swaggerJSDoc(options);
 
@@ -47,7 +53,7 @@ mongoClient();
 // load routers
 
 import taskRouter from "./src/routers/taskRouter.js";
-
+import userRouter from "./src/routers/userRouter.js";
 // Task API
 // const taskFunc = (req, res) => {
 //   //added task in the database
@@ -57,6 +63,7 @@ import taskRouter from "./src/routers/taskRouter.js";
 // };
 
 app.use("/api/v1/task", taskRouter);
+app.use("/api/v1/user", userRouter);
 
 app.listen(PORT, (error) => {
   if (error) {

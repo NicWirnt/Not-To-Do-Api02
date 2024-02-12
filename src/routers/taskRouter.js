@@ -50,14 +50,24 @@ router.post("/", async (req, res) => {
 
     const result = await insertTask(data);
 
+    if (result?._id) {
+      return res.json({
+        status: "success",
+        message: "New task has been added",
+      });
+    }
     console.log(result);
 
     res.json({
-      message: "post method",
-      result,
+      status: "error",
+      message: "Unable to add new task, Please try again later",
     });
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
+    res.json({
+      status: "error",
+      message: "Unable to add new task, Please try again later",
+    });
   }
 });
 
@@ -80,10 +90,10 @@ router.patch("/", async (req, res) => {
   }
 });
 
-router.delete("/:_id?", async (req, res) => {
-  const { _id } = req.params;
-
-  const result = await deleteTask(_id);
+router.delete("/userId?", async (req, res) => {
+  const { userId } = req.params;
+  console.log(req.body);
+  const result = await deleteTask(userId);
 
   res.json({
     status: "success",

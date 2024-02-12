@@ -4,13 +4,14 @@ GET http://localhost:8000/
 ### get single or all task from server
 GET  http://localhost:8000/api/v1/task/
 
-### post task from server
+### post task to server
 POST  http://localhost:8000/api/v1/task
 Content-Type: application/json
 
 {
-    "task" : "walking",
-    "hr" : 6
+    "task" : "dance",
+    "hr" : 150,
+    "userID" : "6278879a251f319ac59757e1"
 }
 
 ### Patch task from server
@@ -23,4 +24,26 @@ Content-Type: application/json
 }
 
 ### delete task from server
+<<<<<<< HEAD
 DELETE  http://localhost:8000/api/v1/task/62676c9ce417b1aa41b48334
+=======
+DELETE  http://localhost:8000/api/v1/task/
+
+
+# user api zone
+
+### get user
+GET http://localhost:8000/api/v1/user/
+
+### post user
+POST http://localhost:8000/api/v1/user/
+Content-Type: application/json
+
+{
+    "name" : "Mer",
+    "email": "mer@email.com"
+}
+
+### delete user
+DELETE  http://localhost:8000/api/v1/user/62787017d5bad1ac9bee337d
+>>>>>>> 620495299d7a494a9ad7deb5ab31ffe2030ca9a0
