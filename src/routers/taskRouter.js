@@ -10,6 +10,26 @@ import {
   updateTask,
 } from "../models/task/TaskList.model.js";
 
+/**
+ * @openapi
+ * /api/v1/task/healthcheck:
+ *  get:
+ *    tag:
+ *      - Healthcheck
+ *    description: Responds if the app is up and running
+ *    responses:
+ *      200:
+ *        description: App is up and running
+ */
+
+router.get("/healthcheck", async (req, res) => {
+  console.log("router hit");
+  res.json({
+    status: "success",
+    message: "router hit",
+  });
+});
+
 router.get("/:_id?", async (req, res) => {
   const { _id } = req.params;
   console.log(_id);

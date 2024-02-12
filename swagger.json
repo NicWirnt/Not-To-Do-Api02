@@ -1,0 +1,24 @@
+{
+  "openapi": "3.0.0",
+  "info": { "title": "REST API Docs", "version": "2.0.0" },
+  "components": {
+    "securitySchema": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": { "bearerAuth": [] },
+  "paths": {
+    "/api/v1/task/healthcheck": {
+      "get": {
+        "tag": ["Healthcheck"],
+        "description": "Responds if the app is up and running",
+        "responses": { "200": { "description": "App is up and running" } }
+      }
+    }
+  },
+  "tags": []
+}
